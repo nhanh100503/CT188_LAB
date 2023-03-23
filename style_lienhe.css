@@ -1,0 +1,252 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    display: grid;
+    grid-template-areas: "header-cell" "nav-cell" "main-cell" "footer-cell";
+    top: 0;
+    margin: 0 auto;
+    border: 1px;
+    padding: 0 5px;
+    width: 1024px;
+    font-size: 1.2em;
+}
+
+main{
+    grid-area: main-cell;
+    display: grid;
+    border: 1px solid #ccc7c8;
+    border-radius: 5px;
+    padding: 0 5px;
+    background-color: #fff;
+}
+
+main.one-col{
+    height: 580px;
+    grid-template-areas: "left-cell" "article-cell" "right-cell";
+}
+
+aside{
+    margin: 2px;
+    padding: 5px;
+    color: #000;
+    text-align: justify;
+}
+
+/* ------------------------------------------------------------Begin phần đầu trang------------------------------------------------------------- */
+header{
+    grid-area: header-cell;
+    position: relative;
+    border: 1px #ccc7c8;
+    border-radius: 5px;
+    margin-bottom: 2px;
+    padding: 0 5px;
+    height: 100px;
+    background-image: url(images/header.png);
+}
+
+#img-header1{
+    position: absolute;
+    height: 100px;
+    top: -30px;
+    animation-name: img_header1;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+}
+@keyframes img_header1{
+    from{left:80%}
+    to{left:30%}
+}
+
+#img-header2{
+    position: absolute;
+    height: 70px;
+    top: -5px;
+    animation-name: img_header2;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+}
+@keyframes img_header2{
+    from{left:80%}
+    to{left:45%}
+}
+
+#img-header3{
+    position: absolute;
+    height: 80px;
+    top: 0;
+    animation-name: img_header3;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+}
+@keyframes img_header3{
+    from{left:80%}
+    to{left:63%}
+}
+/* -----------------------------------------------------------------End phần đầu trang----------------------------------------------------------- */
+
+/* ----------------------------------------------------------------Begin thanh điều hướng-------------------------------------------------------- */
+nav{
+    grid-area: nav-cell;
+    margin-top: 20px;
+    position: relative;
+}
+
+nav > a{
+    top: 0;
+    margin: 3px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    padding: 2px 4px;
+    height: 20px;
+    color: #ed4190;
+    text-align: center;
+    font-size: 17px;
+    background-color: #ffffff80;
+    text-decoration: none;
+    box-shadow: 0 0 3px 0 #00000066;
+}
+nav a:hover{
+    color: #fff;
+    background-color: #cd4190;
+    box-shadow: 0 0 2px 0 #0000004d;
+}
+
+.nav-search{
+    position: absolute;
+    padding-top: 3px;
+    bottom: 10px;
+    right: 10px;
+}
+
+.input{
+    height: 26px;
+}
+
+#search1{
+    padding: 4px;
+    min-width: 30px;
+    text-align: center;
+    color: #fff;
+    background-color: #cddc39;
+
+}
+#search2{
+    padding: 4px;
+    min-width: 30px;
+    text-align: center;
+    color: #cd4190;
+    background-color: #cddc39;
+}
+
+.fa_css{
+    cursor: pointer;
+}
+
+/* -----------------------------------------------------------------End thanh điều hướng-------------------------------------------------------- */
+
+/* ----------------------------------------------------------------Begin phần chân trang-------------------------------------------------------- */
+.dathang{
+    width: 100px;
+    height: 100px;
+}
+
+footer{
+    position: relative;
+    grid-area: footer-cell;
+    margin-top: 2px;
+    border: 1px solid #ccc7c8;
+    border-radius: 5px;
+    padding: 0 5px;
+    text-align: center;
+    color: #000;
+}
+footer a{
+    color: #ed4190;
+}
+footer > a > img{
+    position: fixed;
+    right: 10px;
+    bottom: 5px;
+    padding: 10px;
+    text-align: center;
+    color: #ed4190;
+    z-index: 100px;
+    width: 60px;
+}
+/* -------------------------------------------------------------------End phần chân trang------------------------------------------------------- */
+
+/* ---------------------------------------------------------------------Begin TRANG CHỦ--------------------------------------------------------- */
+article{
+    grid-area: article-cell;
+    text-align: justify;
+    grid-template-columns: auto;
+}
+
+h1{
+    font-family: sans-serif;
+    font-weight: 300;
+    line-height: 34px;
+    margin: 12px 0 16px 0;
+    text-transform: uppercase;
+    text-align: center;
+    color: #f90b6d;
+    font-size: 28px;
+}
+
+h1::after{
+    display: block;
+    content: ' ';
+    position: relative;
+    left: 50%;
+    margin: 12px 0 16px 0;
+    height: 3px;
+    width: 200px;
+    transform: skewX(-12deg) translateX(-50%);
+    background: radial-gradient(#cddc39,#fff);
+}
+
+h2{
+   font-family: sans-serif;
+   font-size: 300;
+   line-height: 28px;
+   margin: 5px 0 10px 0;
+   text-align: left;
+   color: #f90b6d;
+   font-size: 24px;
+}
+
+.first-section{
+    margin-top: 50px;
+    grid-area: left-cell;
+}
+
+.second-section{
+    grid-area: article-cell;
+}
+
+p{
+    text-align:justify;
+}
+
+#img-location{
+    height: 25px;
+    width: 25px;
+    background-color: #cddc39;
+}
+
+.fa_css{
+    background-color: #cddc39;
+    color: #fff;
+    width: 40px;
+    text-align: center;
+    height: 25px;
+}
+
+div table{
+    margin: auto;
+}
+
